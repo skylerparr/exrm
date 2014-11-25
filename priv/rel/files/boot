@@ -119,10 +119,6 @@ fi
 
 # Extract the target node name from node.args
 NAME_ARG=$(egrep '^-s?name' "$VMARGS_PATH")
-if [ -z "$NAME_ARG" ]; then
-    echo "vm.args needs to have either -name or -sname parameter."
-    exit 1
-fi
 
 # Extract the name type and name from the NAME_ARG for REMSH
 NAME_TYPE="$(echo "$NAME_ARG" | awk '{print $1}')"
